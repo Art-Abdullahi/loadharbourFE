@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --primary: #2F80ED;
+  --primary-hover: #1366D1;
+  --primary-light: #5B9CF5;
+  --primary-dark: #1A4A8F;
+
+  /* Secondary Colors */
+  --secondary: #0A2540;
+  --secondary-hover: #051B2E;
+  --secondary-light: #1E3A5C;
+  --secondary-dark: #041324;
+
+  /* Accent Colors */
+  --accent: #00B8A9;
+  --accent-hover: #009B8F;
+  --accent-light: #33C6BA;
+  --accent-dark: #006E64;
+
+  /* Success Colors */
+  --success: #28A745;
+  --success-hover: #218838;
+  --success-light: #48B461;
+  --success-dark: #165C26;
+
+  /* Warning Colors */
+  --warning: #FFC107;
+  --warning-hover: #E0A800;
+  --warning-light: #FFCD39;
+  --warning-dark: #997404;
+
+  /* Error Colors */
+  --error: #DC3545;
+  --error-hover: #C82333;
+  --error-light: #E35D6A;
+  --error-dark: #831F2A;
+}
+
+.dark {
+  /* Primary Colors */
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --primary-light: #60A5FA;
+  --primary-dark: #1D4ED8;
+
+  /* Secondary Colors */
+  --secondary: #1E293B;
+  --secondary-hover: #334155;
+  --secondary-light: #475569;
+  --secondary-dark: #0F172A;
+
+  /* Accent Colors */
+  --accent: #00D1C1;
+  --accent-hover: #00BFB0;
+  --accent-light: #33DBCF;
+  --accent-dark: #007D73;
+
+  /* Success Colors */
+  --success: #34D399;
+  --success-hover: #10B981;
+  --success-light: #6EE7B7;
+  --success-dark: #059669;
+
+  /* Warning Colors */
+  --warning: #FBBF24;
+  --warning-hover: #F59E0B;
+  --warning-light: #FCD34D;
+  --warning-dark: #D97706;
+
+  /* Error Colors */
+  --error: #EF4444;
+  --error-hover: #DC2626;
+  --error-light: #F87171;
+  --error-dark: #B91C1C;
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-hover;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary-hover;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-hover;
+  }
+
+  /* Link Variants */
+  .link-primary {
+    @apply text-primary hover:text-primary-hover;
+  }
+
+  .link-secondary {
+    @apply text-secondary hover:text-secondary-hover;
+  }
+
+  .link-accent {
+    @apply text-accent hover:text-accent-hover;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-dark-primary text-dark-primary;
+  }
+
+  /* Typography */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-dark-primary;
+  }
+
+  .dark p {
+    @apply text-dark-secondary;
+  }
+
+  /* Links */
+  .dark a {
+    @apply text-primary hover:text-primary-hover;
+  }
+
+  /* Backgrounds */
+  .dark .bg-white {
+    @apply bg-dark-secondary;
+  }
+
+  .dark .bg-gray-50 {
+    @apply bg-dark-accent;
+  }
+
+  .dark .bg-gray-100 {
+    @apply bg-dark-secondary;
+  }
+
+  .dark .hover\:bg-gray-50:hover {
+    @apply hover:bg-dark-elevated-hover;
+  }
+
+  /* Form elements */
+  .dark input, .dark select, .dark textarea {
+    @apply bg-dark-input border-dark-input text-dark-primary;
+  }
+
+  .dark input:focus, .dark select:focus, .dark textarea:focus {
+    @apply bg-dark-input-focus border-dark-input-focus;
+  }
+
+  /* Shadow overrides */
+  .dark .shadow-sm {
+    @apply shadow-dark-sm;
+  }
+
+  .dark .shadow {
+    @apply shadow-dark;
+  }
+
+  .dark .shadow-md {
+    @apply shadow-dark-md;
+  }
+
+  .dark .shadow-lg {
+    @apply shadow-dark-lg;
+  }
+
+  .dark .shadow-xl {
+    @apply shadow-dark-xl;
+  }
+
+  .dark .shadow-2xl {
+    @apply shadow-dark-2xl;
+  }
+
+  .dark .shadow-inner {
+    @apply shadow-dark-inner;
+  }
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
